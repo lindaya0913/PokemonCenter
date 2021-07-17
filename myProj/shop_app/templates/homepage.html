@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+<style>
+    .container{
+        width: 200%;
+        margin: 100;
+        color: green;
+        display: inline-block;
+    }
+</style>
+<body>
+    {% block content %}
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <form method="get" action="signin">
+                <buttom type="submit" class="btn btn-primary">Sign In</buttom>
+            </form>
+            <form method="get" action="register">
+                <buttom type="submit" class="btn btn-info">Register</buttom>
+            </form>
+        </div>
+        <h2>Welcome to Pokémon Center!<br>
+        <img src='./static/homepage.jpg' width="1050" height="500" style="text-align:center;">
+    {% endblock %}
+</body>

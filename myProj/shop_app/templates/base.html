@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Pokémon Center</title>
+<style>
+    body{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .fixed-footer{
+        width: 100%;
+        position: fixed;
+        background: #EAC100;
+        padding: 10px;
+        color: white;
+        bottom: 0;
+    }
+    .fixed-header{
+        width: 100%;
+        position: fixed;
+        background: #EAC100;
+        padding: 10px;
+        color: white;
+        font-weight:bold;
+        top: 0;
+    }
+    .container{
+        width: 100%;
+        margin: 20;
+    }
+    .column{
+        display: table;
+        float: left;
+        padding: 10px;
+        height: 400px;
+    }
+    .center{
+        width:400px;
+    }
+    nav a{
+        color: white;
+        text-decoration: none;
+        padding: 7px 25px;
+        display: inline-block;
+    }
+</style>
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="{% url 'app_homepage' %}">Pokémon Center</a>
+                <a href="{% url 'about_us' %}">About Us</a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'contact_us' %}">Contact Us</a>
+            </nav>
+        </div>
+    </div>
+    <main role="main" class="container">
+        <div class="row">
+        </div>
+    </main>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; 2021 Pokémon Center </div>
+    </div>
+</body>
+</html>
