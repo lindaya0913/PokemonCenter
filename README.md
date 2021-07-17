@@ -9,8 +9,14 @@
     - Linux：`python -m virtualenv env`
 ## Start Project locally
 - Start the virtual environment
-`source env/bin/activate`
+```
+source env/bin/activate
+```
 - Startup project
-`python3 manage.py runserver`
+```
+python3 manage.py runserver
+```
 - Exit the virtual environment
-`deactivate`
+```
+deactivate
+```
