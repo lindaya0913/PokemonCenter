@@ -1,5 +1,5 @@
 # Pokémon Center
-This is a Django website to present Pokémon Center which can register & login.
+This is a Django website to present Pokémon Center.
 ## Status
 ![](https://img.shields.io/badge/Django-3.2.5-green)
 ## Installation
@@ -21,3 +21,7 @@ python3 manage.py runserver
 ```
 deactivate
 ```
+## Function
+- Register & Login
+- Can shows all user detail
+- Can Update or Delete user info

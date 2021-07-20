@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+        <table class="table table-hover table-info">
+            <tr>
+                <td>ID</td><td>{{ object.id }}</td>
+            </tr>
+            <tr>
+                <td>Username</td><td>{{ object.name }}</td>
+            </tr>
+            <tr>
+                <td>Email</td><td>{{ object.email }}</td>
+            </tr>
+            <tr>
+                <td>Phone</td><td>{{ object.phoneNum }}</td>
+            </tr>
+        </table>
+        {% if request.user.is_superuser %}
+            <br>
+            <a role="button" class="btn btn-primary" href="{% url 'userupdate' object.id %}">Update</a>
+            <a role="button" class="btn btn-secondary" href="{% url 'userdelete' object.id %}">Delete</a>
+        {% else %}
+            Log in as a superuser to edit user info.
+        {% endif %}
+    {% endblock %}
+</body>
