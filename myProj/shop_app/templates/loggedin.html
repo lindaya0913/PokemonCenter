@@ -10,18 +10,23 @@
 </style>
 <body>
     {% block content %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
         <form action="logout" method="get">
             <button type="submit" class="btn btn-primary">Logout</button>
         </form>
-        <h2 style="text-align:center;">Welcome {{ username }}!!</h2>
+        <br>
+        <table class="table table-warning">
+            <tr>
+                <td><img src='{{ image }}' width='60' height='60' align='right'><br></td>
+                <td><h2>Welcome {{ username }}!!</h2></td>
+            </tr>
+        </table>
         <img src='{% static 'homepage.jpg' %}' width="1050" height="500" style="text-align:center;">
-        <div class="container">
-            <a href="#">Closing</a><br>
-            <a href="#">Figures</a><br>
-            <a href="#">Plush</a><br>
-            <a href="#">Cards</a><br>
-            <a href="#">Home Stuff</a><br>
-            <a href="#">Video Game Stuff</a><br>
-        </div>
+        <br><br>
+        <form action="products" method="get">
+            <button type="submit" class="btn btn-primary">View all products</button>
+        </form>
     {% endblock %}
 </body>

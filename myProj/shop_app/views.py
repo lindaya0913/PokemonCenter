@@ -70,7 +70,11 @@ def signin(request):
         return render(request, 'signin.html')
 
 def loggedin(request):
-    userdetails = {'username': username}
+    image_file = RegisteredUser.objects.get(name=username)
+
+    pic_path = str(image_file.profilePic)
+    full_pic_path = 'media/' + pic_path
+    userdetails = {'username': username, 'image': full_pic_path}
     return render(request, 'loggedin.html', userdetails)
 
 def logout(request):

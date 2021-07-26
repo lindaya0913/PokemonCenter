@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+<style>
+    .column{
+        float: left;
+        padding: 10px;
+        width: 33.33%;
+        height: 300px;
+    }
+
+    .row:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+</style>
+<body>
+    {% block content %}
+        <form action="logout" method="get">
+            <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+        <form action="order" method="post">
+        {% csrf_token %}
+            <div class='row'>
+                <div class='column'>
+                    <h2>Closing</h2>
+                    {% for closing_prod in closing %}
+                        <input type='checkbox' id={{ closing_prod }} name='products' value={{ closing_prod }}>
+                        <label for={{ closing_prod }}>{{ closing_prod }}</label><br>
+                    {% endfor %}
+                </div>
+                <div class='column'>
+                    <h2>Figures</h2>
+                    {% for figures_prod in figures %}
+                        <input type='checkbox' id={{ figures_prod }} name='products' value={{ figures_prod }}>
+                        <label for={{ figures_prod }}>{{ figures_prod }}</label><br>
+                    {% endfor %}
+                </div>
+                <div class='column'>
+                    <h2>Plush</h2>
+                    {% for plush_prod in plush %}
+                        <input type='checkbox' id={{ plush_prod }} name='products' value={{ plush_prod }}>
+                        <label for={{ plush_prod }}>{{ plush_prod }}</label><br>
+                    {% endfor %}
+                </div>
+                <div class='column'>
+                    <h2>Cards</h2>
+                    {% for cards_prod in cards %}
+                        <input type='checkbox' id={{ cards_prod }} name='products' value={{ cards_prod }}>
+                        <label for={{ cards_prod }}>{{ cards_prod }}</label><br>
+                    {% endfor %}
+                </div>
+                <div class='column'>
+                    <h2>Home Stuff</h2>
+                    {% for home_stuff_prod in home_stuff %}
+                        <input type='checkbox' id={{ home_stuff_prod }} name='products' value={{ home_stuff_prod }}>
+                        <label for={{ home_stuff_prod }}>{{ home_stuff_prod }}</label><br>
+                    {% endfor %}
+                </div>
+                <div class='column'>
+                    <h2>Video Game Stuff</h2>
+                    {% for video_game_prod in video_game_stuff %}
+                        <input type='checkbox' id={{ video_game_prod }} name='products' value={{ video_game_prod }}>
+                        <label for={{ video_game_prod }}>{{ video_game_prod }}</label><br>
+                    {% endfor %}
+                </div>
+                <div class='container'>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    {% endblock %}
+</body>
